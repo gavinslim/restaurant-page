@@ -1,3 +1,37 @@
+import Ramen from './ramen.png';
+import Taiwan from './taiwan-noodle.png';
+import Rice from './rice-noodle.png';
+
+// const dish = (name) => {
+//     this.name = name;
+//     const price;
+//     const description;
+
+//     return {name, price, description}
+// }
+
+function create_navbar() {
+    const nav = document.createElement('nav');
+    nav.setAttribute('id', 'navbar');
+
+    const about = document.createElement('a');
+    about.classList.add('link');
+    about.innerHTML = 'About';
+    nav.appendChild(about);   
+
+    const menu = document.createElement('a');
+    menu.classList.add('link')
+    menu.innerHTML = 'Menu';
+    nav.appendChild(menu);
+
+    const contact = document.createElement('a');
+    contact.classList.add('link')
+    contact.innerHTML = 'Contact';
+    nav.appendChild(contact);
+
+    return nav;
+}
+
 function create_header() {
     const content = document.getElementById('content');
 
@@ -12,18 +46,73 @@ function create_header() {
     header.appendChild(title);
 
     // Add nav bar
+    const navbar = create_navbar();
+    header.appendChild(navbar);
 
-    // Add description
+    content.appendChild(header);
+    return;
+}
+
+function create_about() {
+    // About Section
     const desc = document.createElement('div');
     desc.classList.add('description');
 
     const para = document.createElement('p');
-    para.innerHTML = "Here at Oodles, we understand that instant noodles is a staple diet for everyone!";
+    para.innerHTML = "Noodle is love, noodle is life";
     desc.appendChild(para);
-    header.appendChild(desc);
+    // header.appendChild(desc);
 
-    content.appendChild(header);
-    return;
+    return desc;
+}
+
+const create_dish = (name, price) => {
+    var description = '';
+
+    const create_element = (picture) => {
+        const dish = document.createElement('div');
+        dish.classList.add('dish');
+
+        // Add image
+        const img = new Image();
+        img.src = picture;
+        img.classList.add('picture');
+        dish.appendChild(img);
+
+        // Add price
+        const cost = document.createElement('div');
+        cost.innerHTML = price;
+        dish.appendChild(cost);
+
+        return dish;
+    }
+
+    return {name, price, create_element};
+}
+
+const food = (picture) => {
+    const temp = new Image();
+    temp.src = picture;
+    temp.classList.add('picture');
+    return temp;
+}
+
+function create_menu() {
+    // Menu container 
+    const menu = document.createElement('div');
+    menu.classList.add('menu');
+
+    const ramen = create_dish('Ramen', 10.29);
+    const ramen_element = ramen.create_element(Ramen);
+    menu.appendChild(ramen_element);
+
+    // const taiwan = food(Taiwan);
+    // menu.appendChild(taiwan);
+
+    // const rice = dish(Rice);
+    // menu.appendChild(rice);
+    
+    return menu;
 }
 
 function create_main() {
@@ -33,8 +122,9 @@ function create_main() {
     const main = document.createElement('div');
     main.setAttribute('id', 'main');
 
-
-
+    // Menu container 
+    const menu = create_menu();
+    main.appendChild(menu);
 
     content.appendChild(main);
     return;    
@@ -62,7 +152,7 @@ function create_footer() {
     fab.classList.add('fab', 'fa-github');
     href.appendChild(fab);
     github.appendChild(href);
-    
+
     footer.appendChild(copyright);
     footer.appendChild(github);
     content.appendChild(footer);
