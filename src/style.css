@@ -139,15 +139,8 @@ body::before {
     align-items: center;
     gap: 10px;
 
-    /* position: relative;
-    top: 50px; */
-
     margin-top: 50px;
-
-    /* width: 1200px;
-    height: 600px; */
-
-    border: 1px solid green;
+    /* border: 1px solid green; */
     /* background-color: white; */
 }
 
@@ -160,9 +153,15 @@ body::before {
 
     width: 400px;
     height: 400px;
+    border-radius: 50%;
 
     position: relative;
-    border: 1px solid blue;
+    transition: all 0;
+    /* border: 1px solid blue; */
+}
+
+.dish:hover {
+    background: var(--primary-dark);
 }
 
 .dish-picture {
@@ -172,22 +171,64 @@ body::before {
     position: relative;
     top: 0px;
     border-radius: 50%;
+
+    transition: all 0;
     /* border: 1px solid black;  */
     /* background-color: var(--primary-dark); */
 }
 
+.dish-picture:hover {
+    opacity: 25%;
+}
+
 .dish-name {
-    /* color: white; */
+    position: absolute;
+    top: 50px;
+    
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--background-grey);
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+.dish:hover .dish-name {
+    opacity: 1;
 }
 
 .dish-description {
+    position: absolute;
+    top: 160px;
+
+    inline-size: 300px;
+    overflow-wrap: break-word;
     text-align: center;
-    /* color: white; */
+    line-height: 1.6;
+    color: var(--background-grey);
+    pointer-events: none;
+
+    opacity: 0;
+}
+
+.dish:hover .dish-description {
+    opacity: 1;
 }
 
 .dish-cost {
-    position: absolute;
-    bottom: 0;
+    position: absolute; 
+    bottom: 50px;
+
+    font-size: 20px;
+    text-align: center;
+    color: var(--background-grey);
+    pointer-events: none;
+    
+    opacity: 0;
+}
+
+.dish:hover .dish-cost {
+    opacity: 1;
 }
 
 #footer {

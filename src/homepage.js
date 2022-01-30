@@ -3,6 +3,8 @@ import Taiwan from './taiwan-noodle.png';
 import Rice from './rice-noodle.png';
 import Pho from './pho.png';
 import Logo from './logo.png';
+import Udon from './tempura.png';
+import Korean from './korean.png';
 
 // const dish = (name) => {
 //     this.name = name;
@@ -107,22 +109,22 @@ const create_dish = (name, price, description) => {
         dish.appendChild(img);
 
         // Add dish name
-        // const dish_name = document.createElement('div');
-        // dish_name.classList.add('dish-name');
-        // dish_name.innerHTML = name;
-        // dish.appendChild(dish_name);
+        const dish_name = document.createElement('div');
+        dish_name.classList.add('dish-name');
+        dish_name.innerHTML = name;
+        dish.appendChild(dish_name);
 
         // Add description
-        // const desc = document.createElement('div');
-        // desc.classList.add('dish-description');
-        // desc.innerHTML = description;
-        // dish.appendChild(desc);
+        const desc = document.createElement('div');
+        desc.classList.add('dish-description');
+        desc.innerHTML = description;
+        dish.appendChild(desc);
 
         // Add price
-        // const cost = document.createElement('div');
-        // cost.classList.add('dish-cost');
-        // cost.innerHTML = price;
-        // dish.appendChild(cost);
+        const cost = document.createElement('div');
+        cost.classList.add('dish-cost');
+        cost.innerHTML = price;
+        dish.appendChild(cost);
 
         return dish;
     }
@@ -160,9 +162,21 @@ function create_menu() {
 
     // Pho
     const pho_desc = 'Spicy beef broth served with rice noodle, fish cake, beansprout'
-    const pho = create_dish('Spicy Rice Noodle', 10, pho_desc);
+    const pho = create_dish('Beef Pho', 10, pho_desc);
     const pho_element = pho.create_element(Pho);
     menu.appendChild(pho_element);
+
+    // Tempura Udon
+    const udon_desc = 'Spicy beef broth served with rice noodle, fish cake, beansprout'
+    const udon = create_dish('Tempura Udon', 10, udon_desc);
+    const udon_element = udon.create_element(Udon);
+    menu.appendChild(udon_element);
+
+    // Korean Spicy Beef
+    const korean_desc = 'Spicy beef broth served with rice noodle, fish cake, beansprout'
+    const korean = create_dish('Korean Spicy Beef', 10, korean_desc);
+    const korean_element = korean.create_element(Korean);
+    menu.appendChild(korean_element);
 
     main.appendChild(menu);
 }
