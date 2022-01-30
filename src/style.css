@@ -7,9 +7,10 @@
 body {
     display: flex;
     justify-content: center;
-    gap: 20px;
+    /* gap: 20px; */
     font-family: Roboto, sans-serif;
     /* background-color: black; */
+    min-height: 100vh;
     margin: 0px;
 }
 
@@ -18,12 +19,14 @@ body::before {
     position: absolute;
     top: 0; 
     left: 0;
-    width: 100%;
-    height: 100%;
+    right: 0;
+    bottom: 0;
+    min-width: 100vw;
+    min-height: 100vh;
     z-index: -1;
     opacity: .5; 
     background-image: url('noodle-bkg.jpg');
-  }
+}
 
 #content {
     display: flex;
@@ -72,6 +75,7 @@ body::before {
 #main {
     display: flex;
     justify-content: center;
+    padding-bottom: 60px;
 }
 
 .section-container {
@@ -128,17 +132,23 @@ body::before {
 }
 
 .menu {
-    display: flex;
-    gap: 120px;
-    
-    position: relative;
-    top: 100px;
+    display: grid;
+    grid-template-columns: repeat(3, 400px);
+    grid-template-rows: repeat(2, 400px);
+    justify-items: center;
+    align-items: center;
+    gap: 10px;
 
-    width: 1000px;
-    height: 600px;
+    /* position: relative;
+    top: 50px; */
 
-    /* border: 1px solid green; */
-    background-color: white;
+    margin-top: 50px;
+
+    /* width: 1200px;
+    height: 600px; */
+
+    border: 1px solid green;
+    /* background-color: white; */
 }
 
 .dish {
@@ -148,13 +158,11 @@ body::before {
     align-items: center;
     gap: 10px;
 
-    width: 300px;
-    height: 450px;
+    width: 400px;
+    height: 400px;
 
     position: relative;
-
-
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
 }
 
 .dish-picture {
@@ -163,8 +171,8 @@ body::before {
     
     position: relative;
     top: 0px;
-    /* border-radius: 50%; */
-    border: 1px solid black; 
+    border-radius: 50%;
+    /* border: 1px solid black;  */
     /* background-color: var(--primary-dark); */
 }
 
@@ -195,7 +203,6 @@ body::before {
     justify-content: center;
     align-items: center;
     height: 40px;
-    /* border: 1px solid red; */
     gap: 10px;
 }
 

@@ -1,6 +1,7 @@
 import Ramen from './ramen.png';
 import Taiwan from './taiwan-noodle.png';
 import Rice from './rice-noodle.png';
+import Pho from './pho.png';
 import Logo from './logo.png';
 
 // const dish = (name) => {
@@ -94,7 +95,7 @@ function create_about() {
     main.appendChild(body);
 }
 
-const create_dish = (name, price, description, origin) => {
+const create_dish = (name, price, description) => {
     const create_element = (picture) => {
         const dish = document.createElement('div');
         dish.classList.add('dish');
@@ -106,22 +107,22 @@ const create_dish = (name, price, description, origin) => {
         dish.appendChild(img);
 
         // Add dish name
-        const dish_name = document.createElement('div');
-        dish_name.classList.add('dish-name');
-        dish_name.innerHTML = name;
-        dish.appendChild(dish_name);
+        // const dish_name = document.createElement('div');
+        // dish_name.classList.add('dish-name');
+        // dish_name.innerHTML = name;
+        // dish.appendChild(dish_name);
 
         // Add description
-        const desc = document.createElement('div');
-        desc.classList.add('dish-description');
-        desc.innerHTML = description;
-        dish.appendChild(desc);
+        // const desc = document.createElement('div');
+        // desc.classList.add('dish-description');
+        // desc.innerHTML = description;
+        // dish.appendChild(desc);
 
         // Add price
-        const cost = document.createElement('div');
-        cost.classList.add('dish-cost');
-        cost.innerHTML = price;
-        dish.appendChild(cost);
+        // const cost = document.createElement('div');
+        // cost.classList.add('dish-cost');
+        // cost.innerHTML = price;
+        // dish.appendChild(cost);
 
         return dish;
     }
@@ -141,24 +142,28 @@ function create_menu() {
 
     // Shio Ramen
     const ramen_desc = 'Pork chasu, soft-boiled egg, and ramen in a light clear broth with a side of green onions, bamboo, and seaweed';
-    const ramen = create_dish('Shio Ramen', 12, ramen_desc, 'Japanese');
+    const ramen = create_dish('Shio Ramen', 12, ramen_desc);
     const ramen_element = ramen.create_element(Ramen);
     menu.appendChild(ramen_element);
 
     // Taiwanese Beef Noodle
     const beef_noodle_desc = 'Braised beef served with a rich and slightly spicy broth and '
-    const beef_noodle = create_dish('Taiwanese Beef Noodle', 12, beef_noodle_desc, 'Taiwanese');
+    const beef_noodle = create_dish('Taiwanese Beef Noodle', 12, beef_noodle_desc);
     const beef_element = beef_noodle.create_element(Taiwan);
     menu.appendChild(beef_element);
 
     // Spicy Rice Noodle 
     const spicy_noodle_desc = 'Spicy beef broth served with rice noodle, fish cake, beansprout'
-    const spicy_noodle = create_dish('Spicy Rice Noodle', 10, spicy_noodle_desc, 'Chinese');
+    const spicy_noodle = create_dish('Spicy Rice Noodle', 10, spicy_noodle_desc);
     const spicy_noodle_element = spicy_noodle.create_element(Rice);
     menu.appendChild(spicy_noodle_element);
 
     // Pho
-    
+    const pho_desc = 'Spicy beef broth served with rice noodle, fish cake, beansprout'
+    const pho = create_dish('Spicy Rice Noodle', 10, pho_desc);
+    const pho_element = pho.create_element(Pho);
+    menu.appendChild(pho_element);
+
     main.appendChild(menu);
 }
 
