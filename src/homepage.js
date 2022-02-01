@@ -149,7 +149,7 @@ function create_menu() {
     menu.appendChild(ramen_element);
 
     // Taiwanese Beef Noodle
-    const beef_noodle_desc = 'Braised beef served with a rich and slightly spicy broth and '
+    const beef_noodle_desc = 'Braised beef served with a rich and slightly spicy broth with vermicilli noodles'
     const beef_noodle = create_dish('Taiwanese Beef Noodle', 12, beef_noodle_desc);
     const beef_element = beef_noodle.create_element(Taiwan);
     menu.appendChild(beef_element);
@@ -161,24 +161,96 @@ function create_menu() {
     menu.appendChild(spicy_noodle_element);
 
     // Pho
-    const pho_desc = 'Spicy beef broth served with rice noodle, fish cake, beansprout'
-    const pho = create_dish('Beef Pho', 10, pho_desc);
+    const pho_desc = 'Beef flank in a rich beef broth served with thin rice noodles'
+    const pho = create_dish('Beef Pho', 12, pho_desc);
     const pho_element = pho.create_element(Pho);
     menu.appendChild(pho_element);
 
     // Tempura Udon
-    const udon_desc = 'Spicy beef broth served with rice noodle, fish cake, beansprout'
-    const udon = create_dish('Tempura Udon', 10, udon_desc);
+    const udon_desc = 'Shrimp tempura and chewy wheat noodles in a unami-rich dashi soup stock'
+    const udon = create_dish('Tempura Udon', 11, udon_desc);
     const udon_element = udon.create_element(Udon);
     menu.appendChild(udon_element);
 
     // Korean Spicy Beef
-    const korean_desc = 'Spicy beef broth served with rice noodle, fish cake, beansprout'
-    const korean = create_dish('Korean Spicy Beef', 10, korean_desc);
+    const korean_desc = 'Korean spicy beef, green scalions, egg, mushroom and bok-choy vegetables with glass noodles'
+    const korean = create_dish('Korean Spicy Beef', 14, korean_desc);
     const korean_element = korean.create_element(Korean);
     menu.appendChild(korean_element);
 
     main.appendChild(menu);
+}
+
+function create_contact() {
+    // Get main and clear existing section
+    const main = document.getElementById('main');
+    main.innerHTML = '';
+
+    const contact = document.createElement('div');
+    contact.setAttribute('id', 'contact-container');
+
+    // Address
+    const address_container = document.createElement('div');
+    address_container.classList.add('contact-subgroup')
+    
+    const address_header = document.createElement('p');
+    address_header.classList.add('contact-header');
+    address_header.innerHTML = 'ADDRESS';
+    address_container.appendChild(address_header);
+
+    const location = document.createElement('p');
+    location.classList.add('contact-info');
+    location.innerHTML = '1234 - Fake Street, Psuedo State, California';
+    address_container.appendChild(location);
+
+    contact.appendChild(address_container);
+
+    // Phone Number
+    const number_container = document.createElement('div');
+    number_container.classList.add('contact-subgroup');
+    
+    const number_header = document.createElement('p');
+    number_header.classList.add('contact-header');
+    number_header.innerHTML = 'PHONE';
+    number_container.appendChild(number_header);
+
+    const number = document.createElement('p');
+    number.classList.add('contact-info');
+    number.innerHTML = '123-456-7890';
+    number_container.appendChild(number);
+
+    contact.appendChild(number_container);
+
+    // Social Media
+    const social_container = document.createElement('div');
+    social_container.setAttribute('id', 'social-subgroup');
+
+    const social_header = document.createElement('p');
+    social_header.classList.add('contact-header');
+    social_header.innerHTML = 'SOCIAL';
+    social_container.appendChild(social_header);
+
+    const social_logos = document.createElement('div');
+    social_logos.setAttribute('id', 'logo-group');
+
+    // IG
+    const instagram = document.createElement('i');
+    instagram.classList.add('fab', 'fa-instagram', 'social');
+    social_logos.appendChild(instagram);
+
+    // Facebook
+    const facebook = document.createElement('i');
+    facebook.classList.add('fab', 'fa-facebook-square', 'social');
+    social_logos.appendChild(facebook);
+
+    // Twitter
+    const twitter = document.createElement('i');
+    twitter.classList.add('fab', 'fa-twitter-square', 'social');
+    social_logos.appendChild(twitter);
+    social_container.appendChild(social_logos);
+
+    contact.appendChild(social_container);    
+    main.appendChild(contact);
 }
 
 function create_main() {
@@ -187,14 +259,6 @@ function create_main() {
     // Create main div
     const main = document.createElement('div');
     main.setAttribute('id', 'main');
-
-    // About container 
-    // const about = create_about();
-    // main.appendChild(about);
-
-    // Menu container 
-    // const menu = create_menu();
-    // main.appendChild(menu);
 
     content.appendChild(main);
     return;    
@@ -230,4 +294,4 @@ function create_footer() {
 }
 
 
-export {create_header, create_main, create_about, create_menu, create_footer};
+export {create_header, create_main, create_about, create_menu, create_contact, create_footer};

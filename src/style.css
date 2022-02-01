@@ -5,24 +5,19 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    /* gap: 20px; */
     font-family: Roboto, sans-serif;
-    /* background-color: black; */
-    min-height: 100vh;
+    height: auto;
+    /* width: 100vw; */
     margin: 0px;
 }
 
-body::before {
+#content::after {
     content: "";
     position: absolute;
     top: 0; 
     left: 0;
     right: 0;
     bottom: 0;
-    min-width: 100vw;
-    min-height: 100vh;
     z-index: -1;
     opacity: .5; 
     background-image: url('noodle-bkg.jpg');
@@ -31,6 +26,9 @@ body::before {
 #content {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
+    margin: 0px;
+    position: relative;
 }
 
 #header {
@@ -38,8 +36,6 @@ body::before {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-width: 100vw;
-    /* border: 1px solid green; */
 
     height: 50px;
     background-color: var(--primary-dark);
@@ -75,11 +71,11 @@ body::before {
 #main {
     display: flex;
     justify-content: center;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
+    margin-bottom: 60px;
 }
 
 .section-container {
-    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -92,7 +88,6 @@ body::before {
 }
 
 #about-container {
-    /* border: 1px solid blue; */
     text-align: center;
 
     display: flex;
@@ -117,18 +112,13 @@ body::before {
     height: 100px;
     width: 600px;
     line-height: 1.6;
-    /* font-weight: bold; */
-    /* opacity: 90%; */
 
     display: flex;
     justify-content: center;
     align-items: center;
 
-    /* border: 1px solid red; */
-    /* color: var(--primary-dark); */
     color: var(--primary-dark);
     text-shadow: 0 0 1px var(--primary-dark);
-    
 }
 
 .menu {
@@ -140,8 +130,6 @@ body::before {
     gap: 10px;
 
     margin-top: 50px;
-    /* border: 1px solid green; */
-    /* background-color: white; */
 }
 
 .dish {
@@ -157,7 +145,6 @@ body::before {
 
     position: relative;
     transition: all 0;
-    /* border: 1px solid blue; */
 }
 
 .dish:hover {
@@ -173,8 +160,6 @@ body::before {
     border-radius: 50%;
 
     transition: all 0;
-    /* border: 1px solid black;  */
-    /* background-color: var(--primary-dark); */
 }
 
 .dish-picture:hover {
@@ -223,7 +208,7 @@ body::before {
     text-align: center;
     color: var(--background-grey);
     pointer-events: none;
-    
+
     opacity: 0;
 }
 
@@ -231,6 +216,101 @@ body::before {
     opacity: 1;
 }
 
+/* Contact Page  */
+#contact-container {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+
+    width: 500px;
+    height: 500px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    /* gap: 24px; */
+}
+
+.contact-subgroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contact-header {
+    font-weight: bold;
+    letter-spacing: 5px;
+    font-size: 24px;
+
+    background-color: var(--primary-dark);
+    width: 500px;
+    height: 36px;
+    color: var(--background-grey);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info {
+    margin: 0px;
+    font-size: 20px;
+}
+
+#social-subgroup {
+    display: flex;
+    flex-direction: column;
+}
+
+#logo-group {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+}
+
+.social {
+    color: var(--primary-dark);
+    font-size: 124px;
+    cursor: pointer;
+    transition: all 250ms ease;
+}
+
+.fa-instagram:hover {
+    color: #8134AF;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.fa-facebook-square:hover {
+    color: #3B5998;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+.fa-twitter-square:hover {
+    color: #1DA1F2;
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(4deg); }
+    20% { transform: rotate(0deg); }
+    30% { transform: rotate(-4deg); }
+    40% { transform: rotate(0deg); }
+    50% { transform: rotate(4deg); }
+    60% { transform: rotate(0deg); }
+    70% { transform: rotate(-4deg); }
+    80% { transform: rotate(0deg); }
+    90% { transform: rotate(4deg); }
+    100% { transform: rotate(0deg); }
+}
+
+/* Footer */
 #footer {
     position: absolute;
     bottom: 0;
