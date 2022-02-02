@@ -1,7 +1,6 @@
 import {create_header, create_main, create_about, create_menu, create_contact, create_footer} from './homepage.js';
 import './style.css';
 
-
 create_header();
 create_main();
 create_footer();
@@ -12,15 +11,6 @@ about.click();
 
 const menu = document.getElementById('link-menu');
 menu.addEventListener('click', create_menu);
-// menu.click();
 
 const contact = document.getElementById('link-contact');
 contact.addEventListener('click', create_contact);
-contact.click();
-
-// const parent = document.getElementById('content');
-// const element = document.createElement('div');
-// element.innerHTML = 'Oodles of Nodlees';
-// element.classList.add('hello');
-
-// parent.appendChild(element);
