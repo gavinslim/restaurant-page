@@ -20,7 +20,7 @@ The goal of this project was to create a functional multi-page restaurant websit
 
 1. Clone the repository:<br>```git clone https://github.com/gavinslim/restaurant-page.git```
 
-2. Inside the cloned repo, install the required dependencies:<br>```npm build```
+2. Inside the cloned repo, install the required dependencies:<br>```npm install```
 
 3. Initiate live demo:<br>```npm run start```
 
